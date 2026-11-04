@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Polyrim, plasturgiste à Saint-Marcel-lès-Annonay : moulage polyuréthane RIM, composites SMC/BMC, injection thermoplastique, peinture et assemblage.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2315171c'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='20' text-anchor='middle' fill='%23e08a1e'%3EP%3C/text%3E%3C/svg%3E">
+<title>Polyrim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout : site industriel — bandeau, hero + schéma du procédé RIM, chiffres, savoir-faire, étapes, secteurs, entreprise, carrières, contact */
+:root {
+  --ink: #15171c;          /* graphite des moules */
+  --ink-2: #23262e;
+  --amber: #e08a1e;        /* ambre de la résine polyuréthane */
+  --amber-soft: #f6e3c8;
+  --steel: #5d6b7e;
+  --bg: #f5f4f1;
+  --surface: #ffffff;
+  --fg: #16181d;
+  --muted: #5e636e;
+  --line: #e1dfd9;
+  --on-dark: #f4f2ee;
+  --on-dark-muted: #a9adb6;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --wrap: 1180px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #101115; --surface: #191b21; --fg: #eeece8; --muted: #a3a7b0; --line: #2b2e36; --amber-soft: #3a2a14; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #101115; --surface: #191b21; --fg: #eeece8; --muted: #a3a7b0; --line: #2b2e36; --amber-soft: #3a2a14; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--ink); }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.05; text-wrap: balance; letter-spacing: -.01em; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--mono); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); }
+.section { padding-block: 80px; }
+.section-head { display: grid; gap: 10px; margin-bottom: 36px; max-width: 62ch; }
+.section-head h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; }
+.section-head p { margin: 0; color: var(--muted); }
+.tag-ex { display: inline-block; font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border: 1px dashed currentColor; border-radius: 3px; opacity: .75; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.notice { background: var(--amber); color: var(--ink); font-family: var(--mono); font-size: .82rem; text-align: center; padding-block: 6px; }
+
+/* En-tête */
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--ink); color: var(--on-dark); }
+.nav { display: flex; align-items: center; gap: 28px; padding-block: 14px; position: relative; }
+.wordmark { font-family: var(--display); font-weight: 900; font-size: 1.7rem; letter-spacing: .02em; text-decoration: none; text-transform: uppercase; margin-right: auto; display: flex; align-items: baseline; }
+.wordmark i { font-style: normal; color: var(--amber); }
+.menu { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+.menu a { display: block; padding: 8px 12px; text-decoration: none; font-weight: 600; font-size: .95rem; border-radius: 4px; color: var(--on-dark-muted); }
+.menu a:hover { color: var(--on-dark); background: rgba(255,255,255,.06); }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--body); font-weight: 700; font-size: .95rem; padding: 12px 20px; border-radius: 4px; text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+.btn-amber { background: var(--amber); color: var(--ink); }
+.btn-amber:hover { filter: brightness(1.07); }
+.btn-ghost { border-color: rgba(255,255,255,.35); color: var(--on-dark); }
+.btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+.burger { display: none; background: none; border: 2px solid rgba(255,255,255,.3); color: var(--on-dark); border-radius: 4px; padding: 7px 12px; font-weight: 700; cursor: pointer; }
+@media (max-width: 960px) {
+  .burger { display: block; }
+  .nav .btn-amber { display: none; }
+  .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; background: var(--ink); padding: 8px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); border-top: 1px solid rgba(255,255,255,.08); }
+  .menu.open { display: flex; }
+  .menu a { font-size: 1.1rem; padding: 12px 4px; }
+}
+
+/* Hero */
+.hero { background: var(--ink); color: var(--on-dark); position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 32px 32px; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding-block: 84px 72px; }
+.hero-text { min-width: 0; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); font-weight: 900; margin: 14px 0 20px; }
+.hero h1 span { display: block; color: var(--amber); }
+.hero p { color: var(--on-dark-muted); font-size: 1.12rem; max-width: 50ch; margin: 0 0 28px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.rim { background: var(--ink-2); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; padding: 20px; min-width: 0; }
+.rim-head { display: flex; justify-content: space-between; gap: 10px; font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--on-dark-muted); margin-bottom: 12px; }
+.rim svg { width: 100%; height: auto; display: block; }
+.rim-cap { font-size: .9rem; color: var(--on-dark-muted); margin: 12px 0 0; }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: 1fr; padding-block: 56px 48px; } }
+
+/* Chiffres */
+.facts { background: var(--amber); color: var(--ink); }
+.facts .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-block: 26px; }
+.fact b { display: block; font-family: var(--display); font-size: 2.4rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+.fact span { font-family: var(--mono); font-size: .76rem; letter-spacing: .06em; text-transform: uppercase; }
+.facts-src { grid-column: 1 / -1; font-family: var(--mono); font-size: .72rem; opacity: .75; margin: 0; }
+@media (max-width: 720px) { .facts .wrap { grid-template-columns: repeat(2, 1fr); } }
+
+/* Savoir-faire */
+.skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.skill .code { font-family: var(--mono); font-size: .8rem; font-weight: 600; color: var(--amber); }
+.skill h3 { font-size: 1.3rem; font-weight: 800; }
+.skill p { margin: 0; color: var(--muted); font-size: .96rem; }
+@media (max-width: 960px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .skills { grid-template-columns: 1fr; } }
+
+/* Étapes */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 2px solid var(--fg); }
+.steps li { padding: 18px 18px 0 0; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.steps .n { font-family: var(--mono); font-size: .8rem; color: var(--amber); font-weight: 600; }
+.steps b { font-size: 1.1rem; }
+.steps span { color: var(--muted); font-size: .94rem; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--fg); } .steps li { padding: 0 0 18px 18px; } }
+
+/* Secteurs */
+.sectors { background: var(--ink); color: var(--on-dark); }
+.sectors .section-head p { color: var(--on-dark-muted); }
+.sector-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; }
+.sector { border: 1px solid rgba(255,255,255,.12); border-radius: 6px; padding: 28px 24px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.sector.main { background: var(--ink-2); border-color: var(--amber); }
+.sector h3 { font-size: 1.6rem; font-weight: 800; }
+.sector p { margin: 0; color: var(--on-dark-muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-family: var(--mono); font-size: .75rem; padding: 4px 9px; border-radius: 999px; background: rgba(224,138,30,.14); color: var(--amber); }
+@media (max-width: 860px) { .sector-grid { grid-template-columns: 1fr; } }
+
+/* Entreprise */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.about-text { min-width: 0; }
+.about-text h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; margin: 10px 0 18px; }
+.about-text p { color: var(--muted); max-width: 60ch; }
+.idcard { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; min-width: 0; }
+.idcard h3 { font-family: var(--mono); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; padding: 14px 20px; border-bottom: 1px solid var(--line); color: var(--muted); }
+.idcard dl { margin: 0; display: grid; grid-template-columns: auto 1fr; }
+.idcard dt, .idcard dd { padding: 12px 20px; border-bottom: 1px solid var(--line); margin: 0; }
+.idcard dt { font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+.idcard dd { font-weight: 600; overflow-wrap: anywhere; }
+.idcard dl > :nth-last-child(-n+2) { border-bottom: 0; }
+.timeline { list-style: none; margin: 24px 0 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline li { padding: 0 0 14px 20px; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; background: var(--amber); }
+.timeline b { font-family: var(--mono); margin-right: 10px; color: var(--amber); }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 32px; } }
+
+/* Carrières */
+.careers { background: var(--amber-soft); }
+.careers .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 64px; }
+.careers h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; margin-top: 10px; }
+.careers p { color: var(--muted); }
+.jobs { display: grid; gap: 10px; min-width: 0; }
+.job { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.job b { font-size: 1.05rem; }
+.job span { font-family: var(--mono); font-size: .78rem; color: var(--muted); }
+.btn-ink { background: var(--ink); color: var(--on-dark); }
+.btn-ink:hover { background: var(--ink-2); }
+@media (max-width: 860px) { .careers .wrap { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; }
+.contact-list { display: grid; gap: 18px; align-content: start; }
+.contact-item small { display: block; font-family: var(--mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); }
+.contact-item span { font-size: 1.08rem; font-weight: 600; }
+form.quote { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 26px; display: grid; gap: 14px; min-width: 0; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+label { display: grid; gap: 6px; font-size: .85rem; font-weight: 600; color: var(--muted); }
+input, select, textarea { font: inherit; font-size: 1rem; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; width: 100%; }
+textarea { min-height: 120px; resize: vertical; }
+.form-ok { background: var(--amber-soft); border-radius: 4px; padding: 10px 12px; font-weight: 600; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .row2 { grid-template-columns: 1fr; } }
+
+footer { background: var(--ink); color: var(--on-dark-muted); }
+footer .wrap { padding-block: 40px 28px; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: end; }
+footer .wordmark { color: var(--on-dark); margin: 0 0 6px; }
+footer p { margin: 0; font-size: .92rem; }
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<div class="notice">Maquette — les éléments marqués « à compléter » ou « à valider » sont provisoires</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="wordmark" href="#accueil" aria-label="Polyrim, accueil">Poly<i>rim</i></a>
+    <ul class="menu" id="menu">
+      <li><a href="#savoir-faire">Savoir-faire</a></li>
+      <li><a href="#procede">Procédé</a></li>
+      <li><a href="#secteurs">Secteurs</a></li>
+      <li><a href="#entreprise">L'entreprise</a></li>
+      <li><a href="#carrieres">Carrières</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-amber" href="#contact">Demander un devis</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+
+<main id="accueil">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Plasturgie · Ardèche · depuis 1983</span>
+        <h1>Pièces plastiques techniques<span>moulées en Ardèche</span></h1>
+        <p>Polyrim conçoit et fabrique des pièces techniques en polyuréthane RIM, en composite SMC et BMC et en thermoplastique, pour l'automobile et le bâtiment. Moulage, peinture et assemblage sont réalisés sur notre site de Saint-Marcel-lès-Annonay.</p>
+        <div class="hero-cta">
+          <a class="btn btn-amber" href="#savoir-faire">Nos savoir-faire</a>
+          <a class="btn btn-ghost" href="#contact">Parler de votre projet</a>
+        </div>
+      </div>
+      <figure class="rim" style="margin:0">
+        <div class="rim-head"><span>Procédé RIM</span><span>Reaction Injection Molding</span></div>
+        <svg viewBox="0 0 440 250" role="img" aria-label="Schéma du moulage RIM : un polyol et un isocyanate sont mélangés dans une tête de mélange puis injectés dans le moule, où ils réagissent pour former la pièce en polyuréthane">
+          <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#a9adb6">
+            <rect x="10" y="22" width="92" height="56" rx="6" fill="#2d313b" stroke="#5d6b7e"/>
+            <text x="56" y="46" text-anchor="middle" fill="#f4f2ee" font-weight="600">A</text>
+            <text x="56" y="64" text-anchor="middle">polyol</text>
+            <rect x="10" y="150" width="92" height="56" rx="6" fill="#2d313b" stroke="#5d6b7e"/>
+            <text x="56" y="174" text-anchor="middle" fill="#f4f2ee" font-weight="600">B</text>
+            <text x="56" y="192" text-anchor="middle">isocyanate</text>
+            <path d="M102 50 H150 Q164 50 164 70 V104" fill="none" stroke="#5d6b7e" stroke-width="3"/>
+            <path d="M102 178 H150 Q164 178 164 158 V134" fill="none" stroke="#5d6b7e" stroke-width="3"/>
+            <rect x="140" y="102" width="50" height="34" rx="5" fill="#e08a1e"/>
+            <text x="165" y="123" text-anchor="middle" fill="#15171c" font-weight="600">mix</text>
+            <text x="165" y="154" text-anchor="middle">tête de</text>
+            <text x="165" y="167" text-anchor="middle">mélange</text>
+            <path d="M190 119 H246" stroke="#e08a1e" stroke-width="4"/>
+            <path d="M240 112 L250 119 L240 126 Z" fill="#e08a1e"/>
+            <rect x="254" y="58" width="176" height="122" rx="6" fill="#2d313b" stroke="#5d6b7e"/>
+            <path d="M276 140 Q292 92 342 92 Q392 92 408 140 Z" fill="#e08a1e" opacity=".85"/>
+            <text x="342" y="80" text-anchor="middle">moule fermé</text>
+            <text x="342" y="164" text-anchor="middle" fill="#f4f2ee">pièce PU</text>
+            <text x="342" y="206" text-anchor="middle">réaction et durcissement</text>
+            <text x="342" y="220" text-anchor="middle">dans le moule</text>
+          </g>
+        </svg>
+        <figcaption class="rim-cap">Deux composants liquides se mélangent et réagissent directement dans le moule. On obtient des pièces légères et résistantes, même de grande taille.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Polyrim en chiffres">
+    <div class="wrap">
+      <div class="fact"><b>1983</b><span>Année de création</span></div>
+      <div class="fact"><b>120+</b><span>Salariés</span></div>
+      <div class="fact"><b>26 M€</b><span>Chiffre d'affaires 2024</span></div>
+      <div class="fact"><b>1</b><span>Site intégré en Ardèche</span></div>
+      <p class="facts-src">Chiffres publics (annuaires d'entreprises), à valider par Polyrim</p>
+    </div>
+  </section>
+
+  <section class="section" id="savoir-faire">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Savoir-faire</span>
+        <h2>Quatre métiers sous un même toit</h2>
+        <p>Polyrim maîtrise plusieurs procédés de transformation. Chaque pièce est fabriquée avec la technique la mieux adaptée à sa taille, sa résistance et sa série.</p>
+      </div>
+      <div class="skills">
+        <article class="skill"><span class="code">PU · RIM</span><h3>Moulage polyuréthane RIM</h3><p>Injection réactive basse pression pour des pièces de carrosserie et des capotages légers, rigides et de grandes dimensions.</p></article>
+        <article class="skill"><span class="code">SMC · BMC</span><h3>Compression composite</h3><p>Moulage par compression de composites thermodurcissables pour des pièces structurelles et de carrosserie.</p></article>
+        <article class="skill"><span class="code">TP</span><h3>Injection thermoplastique</h3><p>Pièces techniques injectées, des petites séries aux séries industrielles.</p></article>
+        <article class="skill"><span class="code">FINITION</span><h3>Peinture et assemblage</h3><p>Pièces livrées peintes et assemblées, prêtes à monter chez le client.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="procede" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">De la matière à la pièce finie</span>
+        <h2>Un seul interlocuteur, du moule à la livraison</h2>
+        <p>Étapes à valider avec Polyrim.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="n">01</span><b>Étude</b><span>Analyse du cahier des charges et choix du procédé.</span></li>
+        <li><span class="n">02</span><b>Moulage</b><span>RIM, compression SMC et BMC ou injection.</span></li>
+        <li><span class="n">03</span><b>Finition</b><span>Ébavurage et préparation des surfaces.</span></li>
+        <li><span class="n">04</span><b>Peinture</b><span>Mise en teinte selon les exigences du client.</span></li>
+        <li><span class="n">05</span><b>Assemblage</b><span>Montage, contrôle et expédition.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section sectors" id="secteurs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Secteurs</span>
+        <h2>Des pièces pour ceux qui fabriquent</h2>
+        <p>Polyrim travaille pour des industriels qui ont besoin de pièces plastiques fiables, aux formes complexes.</p>
+      </div>
+      <div class="sector-grid">
+        <article class="sector main"><h3>Automobile</h3><p>Pièces de carrosserie, boucliers et pièces techniques, peintes et assemblées.</p><div class="chips"><span>Carrosserie</span><span>Boucliers</span><span>Pièces techniques</span></div></article>
+        <article class="sector"><h3>Bâtiment</h3><p>Pièces techniques moulées pour les fabricants du secteur de la construction.</p><div class="chips"><span>Pièces techniques</span></div></article>
+        <article class="sector"><h3>Autres industries</h3><p>Secteurs et références clients à compléter avec Polyrim.</p><div class="chips"><span>À compléter</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="entreprise">
+    <div class="wrap about">
+      <div class="about-text">
+        <span class="eyebrow">L'entreprise</span>
+        <h2>Une entreprise industrielle ancrée à Annonay</h2>
+        <p>Créée en 1983, Polyrim est installée dans la zone industrielle du Pré du Roy, à Saint-Marcel-lès-Annonay. Plus de 120 personnes y travaillent, du moulage à l'expédition.</p>
+        <p>Ce texte sera complété avec l'histoire de l'entreprise, ses certifications et ses engagements.</p>
+        <ul class="timeline">
+          <li><b>1983</b>Création de Polyrim</li>
+          <li><b>····</b>Grandes étapes de développement (à compléter)</li>
+          <li><b>····</b>Certifications qualité (à compléter)</li>
+          <li><b>2024</b>26 M€ de chiffre d'affaires et plus de 120 salariés</li>
+        </ul>
+      </div>
+      <aside class="idcard" aria-label="Fiche d'identité">
+        <h3>Fiche d'identité</h3>
+        <dl>
+          <dt>Raison sociale</dt><dd>Polyrim</dd>
+          <dt>Création</dt><dd>1983</dd>
+          <dt>Activité</dt><dd>Plasturgie, pièces techniques automobile et bâtiment</dd>
+          <dt>Effectif</dt><dd>Plus de 120 salariés</dd>
+          <dt>Site</dt><dd>348 allée de la Deûme, ZI Le Pré du Roy, 07100 Saint-Marcel-lès-Annonay</dd>
+          <dt>SIREN</dt><dd>326 929 619</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="careers" id="carrieres">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Carrières</span>
+        <h2>Rejoindre Polyrim</h2>
+        <p>Une industrie locale qui recrute : régleurs, opérateurs, peintres, techniciens qualité. Envoyez-nous votre candidature, même spontanée.</p>
+        <a class="btn btn-ink" href="#contact">Postuler</a>
+      </div>
+      <div class="jobs">
+        <div class="job"><b>Régleur presse</b><span>CDI · Exemple</span></div>
+        <div class="job"><b>Opérateur de production</b><span>CDI · Exemple</span></div>
+        <div class="job"><b>Peintre industriel</b><span>CDI · Exemple</span></div>
+        <div class="job"><b>Technicien qualité</b><span>CDI · Exemple</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-list">
+        <div class="section-head" style="margin-bottom:6px"><span class="eyebrow">Contact</span><h2>Parlons de votre projet</h2></div>
+        <div class="contact-item"><small>Adresse</small><span>348 allée de la Deûme<br>ZI Le Pré du Roy<br>07100 Saint-Marcel-lès-Annonay</span></div>
+        <div class="contact-item"><small>Téléphone</small><span>À compléter</span></div>
+        <div class="contact-item"><small>E-mail</small><span>À compléter</span></div>
+      </div>
+      <form class="quote" id="quote-form">
+        <div class="row2">
+          <label for="q-nom">Nom<input id="q-nom" name="nom" required autocomplete="name"></label>
+          <label for="q-societe">Société<input id="q-societe" name="societe" autocomplete="organization"></label>
+        </div>
+        <div class="row2">
+          <label for="q-mail">E-mail<input id="q-mail" name="mail" type="email" required autocomplete="email"></label>
+          <label for="q-tel">Téléphone<input id="q-tel" name="tel" type="tel" autocomplete="tel"></label>
+        </div>
+        <label for="q-objet">Objet
+          <select id="q-objet" name="objet">
+            <option>Demande de devis</option>
+            <option>Candidature</option>
+            <option>Autre demande</option>
+          </select>
+        </label>
+        <label for="q-msg">Votre projet<textarea id="q-msg" name="message" required placeholder="Type de pièce, matière, dimensions, volumes annuels…"></textarea></label>
+        <button class="btn btn-amber" type="submit" style="justify-self:start">Envoyer la demande</button>
+        <div class="form-ok" id="form-ok" hidden>Maquette : le formulaire sera relié à l'adresse e-mail de Polyrim lors de la mise en ligne.</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="wordmark">Poly<i>rim</i></div>
+      <p>Plasturgie · 348 allée de la Deûme, 07100 Saint-Marcel-lès-Annonay</p>
+    </div>
+    <p>© 2026 Polyrim · Mentions légales · Confidentialité</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); }
+  });
+  document.getElementById('quote-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-ok').hidden = false;
+  });
+})();
+</script>
+
+</body>
+</html>
